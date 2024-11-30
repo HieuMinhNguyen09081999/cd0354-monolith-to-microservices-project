@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    app: frontend
+spec:
+  replicas: 1  # You can increase this number if you need multiple replicas
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: nmhieu981999/udagram-frontend:v1
+        ports:
+        - containerPort: 8100  # Assuming the frontend app is listening on port 80
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "0.5"
+          limits:
+            memory: "512Mi"
+            cpu: "1"

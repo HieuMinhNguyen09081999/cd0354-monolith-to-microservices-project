@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-reserveproxy-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 1  # Adjust as needed for scaling
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: nmhieu981999/reverseproxy:v1
+        ports:
+        - containerPort: 8080  # Assuming the backend API is listening on port 8080
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
+        command: ["node", "--max-old-space-size=4096", "./www/server.js"]
