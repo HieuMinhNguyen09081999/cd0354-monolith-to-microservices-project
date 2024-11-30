@@ -1,11 +1,20 @@
 FROM node:18-slim
-## Create app directory
+
+# Create app directory
 WORKDIR /usr/src/app
-## Install app dependencies
-## A wildcard is used to ensure both package.json AND package-lock.json are copied where available (npm@5+)
+
+# Install app dependencies
 COPY package*.json ./
 RUN npm install -f
-## Bundle app source
+
+# Bundle app source
 COPY . .
+
+# Set environment variable to limit worker threads
+ENV UV_THREADPOOL_SIZE=2
+
+# Expose port
 EXPOSE 8080
-CMD [ "npm", "run", "prod" ]
+
+# Command to run the app in production mode
+CMD ["npm", "run", "prod"]
