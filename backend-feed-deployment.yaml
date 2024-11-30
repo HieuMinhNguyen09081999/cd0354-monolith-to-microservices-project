@@ -5,7 +5,7 @@ metadata:
   labels:
     app: backend-feed
 spec:
-  replicas: 1  # Adjust as needed for scaling
+  replicas: 2  # Adjust as needed for scaling
   selector:
     matchLabels:
       app: backend-feed
