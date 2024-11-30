@@ -18,14 +18,14 @@ script:
   - docker build -t reverseproxy ./udagram-reverseproxy
 
 after_success:
-  - docker tag udagram-api-feed sudkul/udagram-api-feed:v1
-  - docker push sudkul/udagram-api-feed:v1
+  - docker tag udagram-api-feed nmhieu981999/udagram-api-feed:v1
+  - docker push nmhieu981999/udagram-api-feed:v1
 
-  - docker tag udagram-api-user sudkul/udagram-api-user:v1
-  - docker push sudkul/udagram-api-user:v1
+  - docker tag udagram-api-user nmhieu981999/udagram-api-user:v1
+  - docker push nmhieu981999/udagram-api-user:v1
 
-  - docker tag udagram-frontend sudkul/udagram-frontend:v1
-  - docker push sudkul/udagram-frontend:v1
+  - docker tag udagram-frontend nmhieu981999/udagram-frontend:v1
+  - docker push nmhieu981999/udagram-frontend:v1
 
-  - docker tag reverseproxy sudkul/reverseproxy:v1
-  - docker push sudkul/reverseproxy:v1
+  - docker tag reverseproxy nmhieu981999/reverseproxy:v1
+  - docker push nmhieu981999/reverseproxy:v1
