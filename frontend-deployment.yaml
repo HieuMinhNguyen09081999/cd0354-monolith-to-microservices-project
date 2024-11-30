@@ -5,7 +5,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 2  # You can increase this number if you need multiple replicas
+  replicas: 1  # You can increase this number if you need multiple replicas
   selector:
     matchLabels:
       app: frontend
@@ -22,7 +22,7 @@ spec:
         resources:
           requests:
             memory: "256Mi"
-            cpu: "0.5"
+            cpu: "0.25"
           limits:
             memory: "512Mi"
-            cpu: "1"
+            cpu: "0.5"
