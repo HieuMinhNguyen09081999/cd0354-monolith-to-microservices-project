@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: backend-user-deployment
   labels:
-    app: backend
+    app: backend-user
 spec:
   replicas: 1  # Adjust as needed for scaling
   selector:
     matchLabels:
-      app: backend
+      app: backend-user
   template: 
     metadata:
       labels:
-        app: backend
+        app: backend-user
     spec:
       containers:
-      - name: backend
+      - name: backend-user
         image: nmhieu981999/udagram-api-user:v1
         ports:
         - containerPort: 8080  # Assuming the backend API is listening on port 8080

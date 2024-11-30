@@ -17,4 +17,4 @@ ENV UV_THREADPOOL_SIZE=2
 EXPOSE 8080
 
 # Command to run the app in production mode
-CMD ["node", "--max-old-space-size=4096", "./node_modules/.bin/tsc && npm run prod"]
+CMD ["sh", "-c", "node --max-old-space-size=4096 && npm run prod"]

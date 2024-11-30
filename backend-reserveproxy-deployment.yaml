@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: backend-reserveproxy-deployment
   labels:
-    app: backend
+    app: backend-reserveproxy
 spec:
   replicas: 1  # Adjust as needed for scaling
   selector:
     matchLabels:
-      app: backend
+      app: backend-reserveproxy
   template:
     metadata:
       labels:
-        app: backend
+        app: backend-reserveproxy
     spec:
       containers:
-      - name: backend
+      - name: backend-reserveproxy
         image: nmhieu981999/reverseproxy:v1
         ports:
         - containerPort: 8080  # Assuming the backend API is listening on port 8080

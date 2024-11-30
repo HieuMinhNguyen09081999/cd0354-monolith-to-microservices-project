@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: backend-feed-deployment
   labels:
-    app: backend
+    app: backend-feed
 spec:
   replicas: 1  # Adjust as needed for scaling
   selector:
     matchLabels:
-      app: backend
+      app: backend-feed
   template:
     metadata:
       labels:
-        app: backend
+        app: backend-feed
     spec:
       containers:
-      - name: backend
+      - name: backend-feed
         image: nmhieu981999/udagram-api-feed:v1
         ports:
         - containerPort: 8080  # Assuming the backend API is listening on port 8080
