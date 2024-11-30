@@ -4,7 +4,7 @@ metadata:
   name: backend-user-service
 spec:
   selector:
-    app: backend-feed  # This matches the label defined in your Deployment
+    app: backend-user  # This matches the label defined in your Deployment
   ports:
     - protocol: TCP
       port: 8080  # The port exposed inside the cluster

@@ -26,4 +26,3 @@ spec:
           limits:
             memory: "4Gi"
             cpu: "2"
-        command: ["node", "--max-old-space-size=4096", "./www/server.js"]
