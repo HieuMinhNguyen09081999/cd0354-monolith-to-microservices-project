@@ -1,5 +1,5 @@
-FROM node:18-slim
-
+FROM node:16-slim
+RUN apt-get update && apt-get install -y python3 make g++
 # Create app directory
 WORKDIR /usr/src/app
 

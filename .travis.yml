@@ -1,11 +1,15 @@
 language: generic
 
-
 services:
   - docker
 
 before_script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - sudo sysctl -w vm.max_map_count=262144  # Increase memory mapping (if applicable)
+
+env:
+  - UV_THREADPOOL_SIZE=2  # Limit Node.js worker threads
+  - NODE_OPTIONS="--max-old-space-size=4096"  # Increase memory allocation
 
 script:
   - docker build -t udagram-api-feed ./udagram-api-feed
